@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1529639665 source:c:\users\ariel\documents\c++ aplications\linearprobing\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	"../include/Hash.h"
+
+1529604957 c:\users\ariel\documents\c++ aplications\linearprobing\include\hash.h
+	<iostream>
+	<stdio.h>
+
+1529629264 source:c:\users\ariel\documents\c++ aplications\linearprobing\src\hash.cpp
+	"Hash.h"
+	<iostream>
+	<stdio.h>
+	<math.h>
+	<ctype.h>
+
