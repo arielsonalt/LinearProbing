@@ -152,7 +152,6 @@ int Hash::excluir(int inteiro)
         cont=0;
         while(cont<posicao)
         {
-            cout<<"oi";
             if((tabela[cont] % tamanhoTabela) == chave)
             {
                 if(tabela[cont-1]==NULL)
@@ -181,11 +180,15 @@ int Hash::excluir(int inteiro)
                             aux2--;
                         }
                     }
-                }else if(tabela[cont-1]!=NULL){
+                }
+                else if(tabela[cont-1]!=NULL)
+                {
                     int cont2 =cont;
                     int encontrou =0;
-                    while(cont2>=0){
-                        if(tabela[cont2]==NULL){
+                    while(cont2>=0)
+                    {
+                        if(tabela[cont2]==NULL)
+                        {
                             tabela[cont2]=tabela[cont];
                             tabela[cont2]=NULL;
                             encontrou=1;
@@ -194,19 +197,23 @@ int Hash::excluir(int inteiro)
 
                         cont2--;
                     }
-                    if(encontrou == 0){
-                            cont2=tamanhoTabela-1;
-                      while(cont2>posicao){
-                          if(tabela[cont2]==NULL){
+                    if(encontrou == 0)
+                    {
+                        cont2=tamanhoTabela-1;
+                        while(cont2>posicao)
+                        {
+                            if(tabela[cont2]==NULL)
+                            {
                                 tabela[cont2]=tabela[cont];
                                 tabela[cont]=NULL;
-                            encontrou =1;
-                          }
-                        cont2--;
-                      }
-                      if(encontrou==0){
-                        cout<<"Tabela Hash cheia"<<endl;
-                      }
+                                encontrou =1;
+                            }
+                            cont2--;
+                        }
+                        if(encontrou==0)
+                        {
+                            cout<<"Tabela Hash cheia"<<endl;
+                        }
                     }
 
                 }

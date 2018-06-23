@@ -7,12 +7,12 @@ using namespace std;
 
 int main()
 {
-   Hash chaveHash;
-   //cout<<"Digite o tamanho da tabela Hash: "<<endl;
-   //int tamanho;
-   //cin>>tamanho;
-   //chaveHash.setTamanhoTabela(tamanho);
- chaveHash.setTamanhoTabela(10);
+    Hash chaveHash;
+    //cout<<"Digite o tamanho da tabela Hash: "<<endl;
+    //int tamanho;
+    //cin>>tamanho;
+    //chaveHash.setTamanhoTabela(tamanho);
+    chaveHash.setTamanhoTabela(10);
     chaveHash.setElementoTabela(15);
     chaveHash.setElementoTabela(16);
     chaveHash.setElementoTabela(17);
@@ -26,6 +26,13 @@ int main()
     chaveHash.mostrarTabela();
     chaveHash.excluir(2);
     chaveHash.mostrarTabela();
+    chaveHash.excluir(15);
+    chaveHash.mostrarTabela();
+    chaveHash.excluir(32);
+    chaveHash.mostrarTabela();
+
+
+
 
 
 
