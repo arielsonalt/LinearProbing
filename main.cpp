@@ -14,7 +14,6 @@ int main()
     //chaveHash.setTamanhoTabela(tamanho);
     chaveHash.setTamanhoTabela(10);
     chaveHash.setElementoTabela(15);
-    chaveHash.setElementoTabela(16);
     chaveHash.setElementoTabela(17);
     chaveHash.setElementoTabela(25);
     chaveHash.setElementoTabela(27);
@@ -23,12 +22,13 @@ int main()
     chaveHash.setElementoTabela(12);
     chaveHash.setElementoTabela(22);
     chaveHash.setElementoTabela(32);
+    chaveHash.setElementoTabela(6);
     chaveHash.mostrarTabela();
     chaveHash.excluir(2);
     chaveHash.mostrarTabela();
     chaveHash.excluir(15);
     chaveHash.mostrarTabela();
-    chaveHash.excluir(32);
+    chaveHash.excluir(22);
     chaveHash.mostrarTabela();
 
 

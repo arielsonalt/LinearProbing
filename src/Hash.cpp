@@ -150,7 +150,7 @@ int Hash::excluir(int inteiro)
             controle++;
         }
         cont=0;
-        while(cont<posicao)
+        while(cont<(tabela[posicao]%tamanhoTabela))
         {
             if((tabela[cont] % tamanhoTabela) == chave)
             {
