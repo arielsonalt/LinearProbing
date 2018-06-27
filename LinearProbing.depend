@@ -16,17 +16,18 @@
 	<math.h>
 	<ctype.h>
 
-1529716808 source:c:\users\ariel\dropbox\github\linearprobing\main.cpp
+1530098984 source:c:\users\ariel\dropbox\github\linearprobing\main.cpp
 	<iostream>
 	<stdio.h>
 	<stdlib.h>
+	<locale>
 	"../include/Hash.h"
 
 1529604957 c:\users\ariel\dropbox\github\linearprobing\include\hash.h
 	<iostream>
 	<stdio.h>
 
-1529767565 source:c:\users\ariel\dropbox\github\linearprobing\src\hash.cpp
+1530098672 source:c:\users\ariel\dropbox\github\linearprobing\src\hash.cpp
 	"Hash.h"
 	<iostream>
 	<stdio.h>
