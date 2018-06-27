@@ -143,6 +143,22 @@ int Hash::excluir(int inteiro)
                         tabela[controle-1]=tabela[controle];
                         tabela[controle]=NULL;
                     }
+                    else
+                {
+                    // da posição atual até a posição da chave
+                    for(int j=controle-1; j>=posicao; j--)
+                    {
+                        // se um local estiver NULL e a posição seguinte a essa for não NULL
+                        // então este local é o imediatamente vazio após posições ocupadas
+                        if(tabela[j]==NULL && tabela[j+1]!=NULL)
+                        {
+                            // adiciono no local vazio encontrado o numero de chave correspondente
+                            // a chave da exclusão
+                            tabela[j]=tabela[controle];
+                            tabela[controle] =NULL;
+                        }
+                    }
+                }
 
                 }
                 controle++;
