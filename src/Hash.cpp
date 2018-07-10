@@ -34,36 +34,45 @@ void Hash::setElementoTabela(int inteiro)
 {
     int chave;
     chave = inteiro%tamanhoTabela;
-    if(tabela[chave] == NULL)
+
+    if(buscarElemento(inteiro))
     {
-        tabela[chave] = inteiro;
+        cout<<"                     O elemento já existe no tabela!"<<endl;
     }
     else
     {
 
-        int cont=0;
-        for(int j=chave; j<tamanhoTabela; j++)
+        if(tabela[chave] == NULL)
         {
-            if(tabela[j]== NULL)
+            tabela[chave] = inteiro;
+        }
+        else
+        {
+
+            int cont=0;
+            for(int j=chave; j<tamanhoTabela; j++)
             {
-                tabela[j]=inteiro;
-                cont++;
-                break;
-            }
-            else if(j==tamanhoTabela-1)
-            {
-                for(int k=0; k<chave; k++)
+                if(tabela[j]== NULL)
                 {
-                    if(tabela[k]==NULL)
-                    {
-                        tabela[k]=inteiro;
-                        cont++;
-                        break;
-                    }
+                    tabela[j]=inteiro;
+                    cont++;
+                    break;
                 }
-                if(cont==0)
+                else if(j==tamanhoTabela-1)
                 {
-                    cout<< "Tabela Hash cheia"<<endl;
+                    for(int k=0; k<chave; k++)
+                    {
+                        if(tabela[k]==NULL)
+                        {
+                            tabela[k]=inteiro;
+                            cont++;
+                            break;
+                        }
+                    }
+                    if(cont==0)
+                    {
+                        cout<< "Tabela Hash cheia"<<endl;
+                    }
                 }
             }
         }
@@ -108,10 +117,17 @@ void Hash::mostrarTabela()
 {
     int *tabela2;
     tabela2 = getTabela();
+    cout<<"                                 ";
     for(int i=0; i<getTamanhoTabela(); i++)
     {
         cout<<tabela2[i]<<" - ";
+        if(i%13 == 12)
+        {
+            cout<<" "<<endl;
+            cout<<"                                 ";
+        }
     }
+
     cout<<" "<<endl;
 }
 int Hash::excluir(int inteiro)
@@ -129,6 +145,8 @@ int Hash::excluir(int inteiro)
         int controle = posicao+1;
         int cont=0;
 
+        //Se a posição [ índice ] da exclusão for menor que a posição [índice] da chave
+        // Faz o tratamento do intervalo entre o indice 0  e o indice da chave.
         if(posicao < chave)
         {
             while(controle < chave)
@@ -144,21 +162,21 @@ int Hash::excluir(int inteiro)
                         tabela[controle]=NULL;
                     }
                     else
-                {
-                    // da posição atual até a posição da chave
-                    for(int j=controle-1; j>=posicao; j--)
                     {
-                        // se um local estiver NULL e a posição seguinte a essa for não NULL
-                        // então este local é o imediatamente vazio após posições ocupadas
-                        if(tabela[j]==NULL && tabela[j+1]!=NULL)
+                        // da posição atual até a posição da chave
+                        for(int j=controle-1; j>=posicao; j--)
                         {
-                            // adiciono no local vazio encontrado o numero de chave correspondente
-                            // a chave da exclusão
-                            tabela[j]=tabela[controle];
-                            tabela[controle] =NULL;
+                            // se um local estiver NULL e a posição seguinte a essa for não NULL
+                            // então este local é o imediatamente vazio após posições ocupadas
+                            if(tabela[j]==NULL && tabela[j+1]!=NULL)
+                            {
+                                // adiciono no local vazio encontrado o numero de chave correspondente
+                                // a chave da exclusão
+                                tabela[j]=tabela[controle];
+                                tabela[controle] =NULL;
+                            }
                         }
                     }
-                }
 
                 }
                 controle++;
@@ -166,7 +184,7 @@ int Hash::excluir(int inteiro)
             return 1;
         }
 
-        // enquanto a posição seguinte a exclusão for menor que o tamanho do vetor menos 1
+        // Enquanto a posição seguinte a exclusão for menor que o tamanho do vetor menos 1
         // percorre o vedor da posição seguinte da exclusão até o fim do vetor
         while(controle<=tamanhoTabela-1)
         {
@@ -283,9 +301,11 @@ int Hash::excluir(int inteiro)
         return 0;
     }
 }
+
 int Hash::posicaoExclusao(int key, int inteiro)
 {
     // Encontra o numero e o exclui
+    // Retorna o numero do local onde este foi excluído;
     for(int i=key; i<tamanhoTabela; i++)
     {
         if(tabela[i]==NULL)

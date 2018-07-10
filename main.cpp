@@ -5,23 +5,28 @@
 #include "../include/Hash.h"
 using namespace std;
 
-
 int main()
 {
     setlocale(LC_ALL,"portuguese");
     Hash chaveHash;
-int tamanho;
-do{
-    cout<<"Digite o tamanho da tabela Hash: "<<endl;
-    cin>>tamanho;
-    }while(tamanho<=0);
+    int tamanho;
+    do
+    {
+        cout<<"Digite o tamanho da tabela Hash: "<<endl;
+        cin>>tamanho;
+    }
+    while(tamanho<=0);
     chaveHash.setTamanhoTabela(tamanho);
 
     int sair = 0;
     while(sair !=4)
     {
+
+        cout<<""<<endl;
         cout<<""<<endl;
         chaveHash.mostrarTabela();
+        cout<<""<<endl;
+        cout<<""<<endl;
 
         cout<<"                             _______________________LINEAR PROBING______________________"<<endl;
         cout<<"                             ***********************************************************"<<endl;
@@ -78,7 +83,9 @@ do{
                 system("pause");
             }
             system("cls");
-        }else{
+        }
+        else
+        {
             system("cls");
         }
 
