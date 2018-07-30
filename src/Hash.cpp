@@ -93,7 +93,7 @@ int Hash::buscarElemento(int inteiro)
     {
         if(tabela[i]==NULL)
         {
-            break;
+            //break;
         }
         if(tabela[i]==inteiro)
         {
@@ -104,7 +104,7 @@ int Hash::buscarElemento(int inteiro)
     {
         if(tabela[j]==NULL)
         {
-            break;
+           // break;
         }
         if(tabela[j]==inteiro)
         {
